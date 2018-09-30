@@ -1,0 +1,14 @@
+{
+  "name": "dobijecka-kaktus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/delold/dobijecka-kaktus.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "node-fetch": "^2.2.0"
+  }
+}

@@ -1,0 +1,24 @@
+﻿AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Kaktus BOT
+Resources:
+  kaktus:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs8.10
+      CodeUri: .
+      Description: ''
+      MemorySize: 128
+      Timeout: 300
+      Role: 'arn:aws:iam::642014829397:role/service-role/kaktus'
+      Events:
+        Schedule1:
+          Type: Schedule
+          Properties:
+            Schedule: rate(1 hour)
+      Environment:
+        Variables:
+          SLACK_ENDPOINT: >-
+            https://hooks.slack.com/services/{ENTER YOUR URL}
+          DYNAMO_TABLE_NAME: kaktus
